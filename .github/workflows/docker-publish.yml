@@ -17,7 +17,7 @@ jobs:
       - run: npm run build
       - run: npm test
     
-publish-docker:
+  publish-docker:
       - uses: actions/checkout@v3
 
       - name: Set up QEMU
