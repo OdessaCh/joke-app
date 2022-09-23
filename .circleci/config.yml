@@ -10,6 +10,12 @@ workflows:
   build:
     jobs:
       - node/test:
+        matrix:
+          parameters:
+            version: 
+              - "16.15"
+              - "14.19"
+              - "12.13"
           filters:
             branches:
               only: circleci-project-setup
