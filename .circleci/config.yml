@@ -18,5 +18,4 @@ workflows:
       - build-test:
           filters:
             branches:
-              only:
-                -circleci-project-setup
+              only: circleci-project-setup
