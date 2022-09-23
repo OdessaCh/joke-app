@@ -1,6 +1,8 @@
 # This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
 version: 2.1
 
+orbs:
+  node: circleci/node@5.0.2
 jobs:
   build-test:
     docker:
@@ -8,7 +10,10 @@ jobs:
 
     steps:
       - checkout
-      - run: npm install
+      - node/install:
+          node-version: '16.13'
+      - node/install-packages:
+          cache-path: ~/.project/node_modules
       - run: npm run build
       - run: npm test
 
